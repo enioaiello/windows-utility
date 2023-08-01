@@ -10,7 +10,7 @@ if %errorlevel% neq 0 (
 
 title Windows Utility
 echo Welcome to Windows Utility
-echo By enioaiello
+echo By enioaiello and available on GitHub
 echo.
 echo Features available with Windows 10/11.
 echo.
@@ -20,6 +20,7 @@ echo 1. Upgrade Home to Enterprise
 echo 2. Activate Windows 
 echo 3. Activate Office
 echo.
+echo R. Repo
 echo C. Credits
 echo Q. Quit
 echo.
@@ -28,6 +29,8 @@ set /p choice="> "
 if "%choice%"=="1" goto upgrade 
 if "%choice%"=="2" goto win-activate
 if "%choice%"=="3" goto office-activate
+if /i "%choice%"=="u" goto update-activate
+if /i "%choice%"=="r" goto repo
 if /i "%choice%"=="c" goto credits
 if /i "%choice%"=="q" goto end
 
@@ -90,6 +93,13 @@ echo ===========================================================================
 echo =====================================================================================&echo.&echo Sorry, the server is busy and can't respond to your request. Please try again.&echo.
 :halt
 pause >nul 
+echo.
+goto home
+
+:repo 
+echo. 
+echo Opened in a browser tab
+start https://github.com/enioaiello/windows-utility 
 echo.
 goto home
 
