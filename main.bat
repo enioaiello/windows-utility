@@ -29,12 +29,16 @@ set /p choice="> "
 if "%choice%"=="1" goto upgrade 
 if "%choice%"=="2" goto win-activate
 if "%choice%"=="3" goto office-activate
-if /i "%choice%"=="u" goto update-activate
 if /i "%choice%"=="r" goto repo
 if /i "%choice%"=="c" goto credits
 if /i "%choice%"=="q" goto end
 
 :upgrade 
+echo.
+echo Attention! Please save all documents before continuing. In addition, you'll need to reactivate Windows with this tool if it asks you to activate Windows (about two hours)!
+echo.
+echo Press enter to proceed.
+pause > nul
 echo.
 SLMGR.VBS /UPK
 SLMGR.VBS /CPKY
